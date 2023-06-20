@@ -1,0 +1,54 @@
+<app-menuadmin></app-menuadmin>
+<div class="bg"><br/>
+<h1 style="color:red">PAYMENT TABLE</h1>
+   <br/><br/>
+   <div class="form-group">
+      <label style="color:white">Search data</label><br/><br/>
+      <input type="text" class="form-control" id="status" placeholder="Enter filter condition"><br/>
+   </div>
+  <table class="table">
+  <thead>
+  <tr>
+      <th style="color:coral" scope="col">CONSUMER ID</th>
+      <th style="color:coral" scope="col">READING ID</th>
+      <th style="color:coral" scope="col">DATE,TIME</th>
+      <th style="color:coral" scope="col">STATUS</th>
+      <th style="color:coral" scope="col">EDIT</th>
+      <th style="color:coral" scope="col">DELETE</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let StudentItem of StudentArray">
+      <td style="color:white">{{StudentItem.eid }}</td>
+      <td style="color:white">{{StudentItem.rid }}</td>
+      <td style="color:white">{{StudentItem.date }}</td>
+      <td style="color:white">{{StudentItem.status }}</td>
+      <td>
+        <button type="button" class="btn btn-success" (click)="setUpdate(StudentItem)">Edit</button>/
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="setDelete(StudentItem)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table><br/>
+<h1 class="heads" style="color:red">Payment Update form</h1><br/>
+<div class="upform">
+<form>
+      <label style="color:  white">Consumer Id</label>
+      <input type="text" [(ngModel)]="eid" [ngModelOptions]="{standalone: true}"  class="form-control">
+      <br/>
+      <label style="color:  white">Reading Id</label>
+      <input type="text" [(ngModel)]="rid" [ngModelOptions]="{standalone: true}"  class="form-control">
+      <br/>
+      <label style="color:  white">Payment date & time</label>
+      <input type="text" [(ngModel)]="date" [ngModelOptions]="{standalone: true}" class="form-control"
+      placeholder="DD-MM-YYYY">
+      <br/>
+      <label style="color:  white">Status</label>
+      <input type="text" [(ngModel)]="status" [ngModelOptions]="{standalone: true}"  class="form-control" id="status" placeholder="Success/Failed">
+</form>
+    <br/>
+      <button class="ub" style="color:blue" type="submit" (click)="UpdateRecords()" >update</button>
+
+</div>

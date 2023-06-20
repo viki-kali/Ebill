@@ -1,0 +1,24 @@
+<app-menu></app-menu>
+<div class="bg"><br/>
+<br/>
+<h1 style="color:red">Feedback form</h1>
+<form>
+      <label style="color:  white">Consumer Id</label>
+      <input type="text" [(ngModel)]="eid" [ngModelOptions]="{standalone: true}"  class="form-control">
+      <br/>
+      <label style="color:  white">How easy to use</label>
+      <input type="text" [(ngModel)]="friendly" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter rating 1(Difficult)- 5(Very easy)">
+      <br/>
+      <label style="color:  white">Rate the design </label>
+      <input type="text" [(ngModel)]="design" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter rating 1(Bad)-5(Best)">
+      <br/>
+      <label style="color:  white">Overall ratings</label>
+      <input type="text" [(ngModel)]="rating" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter rating 1(Bad)-5(Best)">
+      <br/>
+      <label style="color:  white">Describe</label>
+      <textarea rows="3" cols="10" [(ngModel)]="desc" [ngModelOptions]="{standalone: true}"  class="form-control">
+      </textarea>
+</form>
+    <br/>
+   <button type="submit" (click)="register()" class="btn btn-primary">Submit</button>
+</div>

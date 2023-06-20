@@ -1,0 +1,16 @@
+<div class="bg"><br/>
+<h1 style="color:red">BILL SUMMARY:</h1>
+<div class="list">
+      <ul *ngFor="let Item of StudentArray | filter:search">
+      <li style="color:white"><pre>CONSUMER ID    : {{Item.eid }}</pre></li><br/>
+      <li style="color:white"><pre>READING ID     : {{Item.rid }}</pre></li><br/>
+      <li style="color:white"><pre>READDING DATE  : {{Item.readingdate }}</pre></li><br/>
+      <li style="color:white"><pre>DUE DATE       : {{Item.duedate }}</pre></li><br/>
+      <li style="color:white"><pre>CONSUMED UNITS : {{Item.units }}</pre></li><br/>
+      <li style="color:white"><pre>BILL AMOUNT    : {{Item.bill }}</pre></li><br/>
+      <button type="submit" (click)="makepayment(Item)" class="btn btn-primary">Pay {{Item.bill}}</button>
+      </ul>
+</div>
+      <button class="back" type="submit" [routerLink]='["/profile"]'>BACK</button>
+      <br/>
+</div>

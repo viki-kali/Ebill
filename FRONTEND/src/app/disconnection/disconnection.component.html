@@ -1,0 +1,67 @@
+<app-menuadmin></app-menuadmin>
+<div class="bg"><br/>
+<h1 class="heads" style="color:red">DISCONNECTION TABLE</h1>
+   <br/><br/>
+   <div class="form-group">
+      <label style="color:white">Search data</label><br/><br/>
+      <input type="text" class="form-control" id="status" placeholder="Enter filter condition"><br/>
+   </div>
+  <table class="table">
+  <thead>
+  <tr>
+      <th style="color:coral" scope="col">CONSUMER ID</th>
+      <th style="color:coral" scope="col">DISCONNECTION ID</th>
+      <th style="color:coral" scope="col">DISCONNECTION DATE</th>
+      <th style="color:coral" scope="col">TIME</th>
+      <th style="color:coral" scope="col">REASON</th>
+      <th style="color:coral" scope="col">PENALITY AMOUNT</th>
+      <th style="color:coral" scope="col">STATUSE</th>
+      <th style="color:coral" scope="col">EDIT</th>
+      <th style="color:coral" scope="col">DELETE</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let StudentItem of StudentArray">
+      <td style="color:white">{{StudentItem.eid }}</td>
+      <td style="color:white">{{StudentItem.did }}</td>
+      <td style="color:white">{{StudentItem.date  | uppercase}}</td>
+      <td style="color:white">{{StudentItem.time }}</td>
+      <td style="color:white">{{StudentItem.reason }}</td>
+      <td style="color:white">{{StudentItem.penalityamt }}</td>
+      <td style="color:white">{{StudentItem.status }}</td>
+      <td>
+        <button type="button" class="btn btn-success" (click)="setUpdate(StudentItem)">Edit</button>/
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="setDelete(StudentItem)">Delete</button>
+      </td>    </tr>
+  </tbody>
+</table><br/>
+<h1 style="color:red">Updation form</h1><br/>
+<div class="upform">
+<form>
+      <label style="color:  white">Consumer Id</label>
+      <input type="text" [(ngModel)]="eid" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter consumer id">
+      <br/>
+      <label style="color:  white">Disconnection Id</label>
+      <input type="text" [(ngModel)]="did" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter consumer name">
+      <br/>
+      <label style="color:  white">Disconnection Date</label>
+      <input type="text" [(ngModel)]="date" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="DD-MM-YYYY">      <br/>
+      <label style="color:  white">Time</label>
+      <input type="text" [(ngModel)]="time" [ngModelOptions]="{standalone: true}" class="form-control">
+      <br/>
+      <label style="color:  white">Reason for sisconnection</label>
+      <input type ="text" [(ngModel)]="reason" [ngModelOptions]="{standalone: true}"  class="form-control">
+      <br/>
+      <label style="color:  white">Penality amount</label>
+      <input type="text" [(ngModel)]="penalityamt" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Eg. Rs.100">
+      <br/>
+      <label style="color:  white">Status</label>
+      <input type="text" [(ngModel)]="status" [ngModelOptions]="{standalone: true}"  class="form-control" id="status" placeholder="Paid /Not paid">
+</form>
+    <br/>
+      <button class="ub" style="color:blue" type="submit" (click)="UpdateRecords()" >update</button>
+
+</div>
+

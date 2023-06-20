@@ -1,0 +1,60 @@
+<app-menuadmin></app-menuadmin>
+<div class="bg"><br/>
+<h1 style="color:red">SERVICE TABLE</h1>
+   <br/><br/>
+   <div class="form-group">
+      <label style="color:white">Search data</label><br/><br/>
+      <input type="text" class="form-control" id="status" placeholder="Enter filter condition"><br/>
+   </div>
+  <table class="table">
+  <thead>
+  <tr>
+      <th style="color:coral" scope="col">CONSUMER ID</th>
+      <th style="color:coral" scope="col">USER FRIENDLY</th>
+      <th style="color:coral" scope="col">UI DESIGN</th>
+      <th style="color:coral" scope="col">OVERALL</th>
+      <th style="color:coral" scope="col">DESCRIPTION</th>
+      <th style="color:coral" scope="col">EDIT</th>
+      <th style="color:coral" scope="col">DELETE</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let StudentItem of StudentArray">
+      <td style="color:white">{{StudentItem.eid }}</td>
+      <td style="color:white">{{StudentItem.friendly }}</td>
+      <td style="color:white">{{StudentItem.design }}</td>
+      <td style="color:white">{{StudentItem.rating }}</td>
+      <td style="color:white">{{StudentItem.desc }}</td>
+      <td>
+        <button type="button" class="btn btn-success" (click)="setUpdate(StudentItem)">Edit</button>/
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="setDelete(StudentItem)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table><br/>
+<h1 class="heads" style="color:red">Feedback Update form</h1><br/>
+<div class="upform">
+<form>
+      <label style="color:  white">Consumer Id</label>
+      <input type="text" [(ngModel)]="eid" [ngModelOptions]="{standalone: true}"  class="form-control">
+      <br/>
+      <label style="color:  white">User friendly</label>
+      <input type="text" [(ngModel)]="friendly" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter rating 1(Bad)-5(Best)">
+      <br/>
+      <label style="color:  white">User Interface</label>
+      <input type="text" [(ngModel)]="design" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter rating 1(Bad)-5(Best)">
+      <br/>
+      <label style="color:  white">Overall ratinge</label>
+      <input type="text" [(ngModel)]="rating" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter rating 1(Bad)-5(Best)">
+      <br/>
+
+      <label style="color:  white">Describe</label>
+      <textarea rows="3" cols="10" [(ngModel)]="desc" [ngModelOptions]="{standalone: true}"  class="form-control">
+      </textarea>
+</form>
+    <br/>
+      <button class="ub" style="color:blue" type="submit" (click)="UpdateRecords()" >update</button>
+
+</div>

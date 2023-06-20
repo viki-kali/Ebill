@@ -1,0 +1,29 @@
+<div class="bg">
+<app-menuadmin></app-menuadmin>
+<br/>
+<h1 style="color:red">Add Readings</h1>
+<form>
+      <label style="color:  white">Consumer Id</label>
+      <input type="text" [(ngModel)]="eid" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter consumer id">
+      <br/>
+      <label style="color:  white">Reading Id</label>
+      <input type="text" [(ngModel)]="rid" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter consumer id">
+      <br/>
+      <label style="color:  white">Reading Date</label>
+      <input type="text" [(ngModel)]="readingdate" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="DD-MM-YYYY">
+      <br/>
+      <label style="color:  white">Due Date</label>
+      <input type="text" [(ngModel)]="duedate" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="DD-MM-YYYY">
+      <br/>
+      <label style="color:  white">Consumed Units</label>
+      <input type="text" [(ngModel)]="units" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="units">
+      <br/>
+      <label style="color:  white">Bill amount</label>
+      <input type="text" [(ngModel)]="bill" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Eg. Rs.100">
+      <br/>
+      <label style="color:  white">Status</label>
+      <input type="text" [(ngModel)]="status" [ngModelOptions]="{standalone: true}"  class="form-control" id="status" placeholder="Paid /Not paid">
+</form>
+    <br/>
+   <button type="submit" (click)="register()" class="btn btn-primary">Submit</button>
+</div>

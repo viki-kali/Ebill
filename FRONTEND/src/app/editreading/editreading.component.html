@@ -1,0 +1,67 @@
+<app-menuadmin></app-menuadmin>
+<div class="bg"><br/>
+ <h1 style="color:red">EBILL READINGS TABLE</h1>
+   <br/><br/>
+   <div class="form-group">
+      <label style="color:white">Search data</label><br/><br/>
+      <input type="text" [(ngModel)]="search" [ngModelOptions]="{standalone: true}"  class="form-control" id="status" placeholder="Enter filter condition"><br/>
+  </div>
+  <table class="table">
+  <thead>
+  <tr>
+      <th style="color:coral" scope="col">Consumar ID</th>
+      <th style="color:coral" scope="col">READING ID</th>
+      <th style="color:coral" scope="col">READ DATE</th>
+      <th style="color:coral" scope="col">DUE DATE</th>
+      <th style="color:coral" scope="col">CONSUMED UNITS</th>
+      <th style="color:coral" scope="col">BILL</th>
+      <th style="color:coral" scope="col">STATUS</th>
+      <th style="color:coral" scope="col">EDIT</th>
+      <th style="color:coral" scope="col">DELETE</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let StudentItem of StudentArray | filter:search">
+      <td style="color:white">{{StudentItem.eid }}</td>
+      <td style="color:white">{{StudentItem.rid }}</td>
+      <td style="color:white">{{StudentItem.readingdate }}</td>
+      <td style="color:white">{{StudentItem.duedate }}</td>
+      <td style="color:white">{{StudentItem.units }}</td>
+      <td style="color:white">{{StudentItem.bill }}</td>
+      <td style="color:white">{{StudentItem.status }}</td>
+      <td>
+        <button type="button" class="btn btn-success" (click)="setUpdate(StudentItem)">Edit</button>/
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="setDelete(StudentItem)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table><br/>
+<h1 style="color:red">Updation form</h1><br/>
+<div class="upform">
+<form>
+      <label style="color:  white">Consumer Id</label>
+      <input type="text" [(ngModel)]="eid" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter consumer id">
+      <br/>
+      <label style="color:  white">Reading Id</label>
+      <input type="text" [(ngModel)]="rid" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter consumer id">
+      <br/>
+      <label style="color:  white">Reading Date</label>
+      <input type="text" [(ngModel)]="readingdate" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="DD-MM-YYYY">
+      <br/>
+      <label style="color:  white">Due Date</label>
+      <input type="text" [(ngModel)]="duedate" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="DD-MM-YYYY">
+      <br/>
+      <label style="color:  white">Consumed Units</label>
+      <input type="text" [(ngModel)]="units" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="units">
+      <br/>
+      <label style="color:  white">Bill amount</label>
+      <input type="text" [(ngModel)]="bill" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Eg. Rs.100">
+      <br/>
+      <label style="color:  white">Status</label>
+      <input type="text" [(ngModel)]="status" [ngModelOptions]="{standalone: true}"  class="form-control" id="status" placeholder="Paid /Not paid">
+</form>
+    <br/>
+      <button class="ub" style="color:blue" type="submit" (click)="UpdateRecords()" >update</button>
+</div>

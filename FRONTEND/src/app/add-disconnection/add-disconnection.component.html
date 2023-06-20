@@ -1,0 +1,28 @@
+<div class="bg">
+<app-menuadmin></app-menuadmin>
+<br/>
+<h1 style="color:red">Add Disconnection</h1><br/>
+<form>
+      <label style="color:  white">Consumer Id</label>
+      <input type="text" [(ngModel)]="eid" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter consumer id">
+      <br/>
+      <label style="color:  white">Disconnection Id</label>
+      <input type="text" [(ngModel)]="did" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter disconnection id">
+      <br/>
+      <label style="color:  white">Disconnection Date</label>
+      <input type="text" [(ngModel)]="date" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="DD-MM-YYYY">      <br/>
+      <label style="color:  white">Time</label>
+      <input type="text" [(ngModel)]="time" [ngModelOptions]="{standalone: true}" class="form-control">
+      <br/>
+      <label style="color:  white">Reason for disconnection</label>
+      <textarea rows="3" cols="10" [(ngModel)]="reason" [ngModelOptions]="{standalone: true}"  class="form-control">
+      </textarea>
+      <br/>
+      <label style="color:  white">Penality amount</label>
+      <input type="text" [(ngModel)]="penalityamt" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Eg. Rs.100">
+      <br/>
+      <label style="color:  white">Status</label>
+      <input type="text" [(ngModel)]="status" [ngModelOptions]="{standalone: true}"  class="form-control" id="status" placeholder="Paid /Not paid">
+</form><br/>
+   <button type="submit" (click)="register()" class="btn btn-primary">Submit</button>
+</div>

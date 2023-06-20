@@ -1,0 +1,65 @@
+<app-menuadmin></app-menuadmin>
+<div class="bg"><br/>
+<h1 style="color:red">SERVICE TABLE</h1>
+   <br/><br/>
+   <div class="form-group">
+      <label style="color:white">Search data</label><br/><br/>
+      <input type="text" class="form-control" id="status" placeholder="Enter filter condition"><br/>
+   </div>
+  <table class="table">
+  <thead>
+  <tr>
+      <th style="color:coral" scope="col">CONSUMER ID</th>
+      <th style="color:coral" scope="col">SERVICE ID</th>
+      <th style="color:coral" scope="col">COMPLAINT DATE</th>
+      <th style="color:coral" scope="col">DESCRIPTION</th>
+      <th style="color:coral" scope="col">RESOLVED DATE</th>
+      <th style="color:coral" scope="col">STATUS</th>
+      <th style="color:coral" scope="col">EDIT</th>
+      <th style="color:coral" scope="col">DELETE</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let StudentItem of StudentArray">
+      <td style="color:white">{{StudentItem.eid }}</td>
+      <td style="color:white">{{StudentItem.sid }}</td>
+      <td style="color:white">{{StudentItem.complaintdate  | uppercase}}</td>
+      <td style="color:white">{{StudentItem.desc }}</td>
+      <td style="color:white">{{StudentItem.resolvedate }}</td>
+      <td style="color:white">{{StudentItem.status }}</td>
+      <td>
+        <button type="button" class="btn btn-success" (click)="setUpdate(StudentItem)">Edit</button>/
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="setDelete(StudentItem)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table><br/>
+<h1 class="heads" style="color:red">Service Update form</h1><br/>
+<div class="upform">
+<form>
+      <label style="color:  white">Consumer Id</label>
+      <input type="text" [(ngModel)]="eid" [ngModelOptions]="{standalone: true}"  class="form-control">
+      <br/>
+      <label style="color:  white">Service Id</label>
+      <input type="text" [(ngModel)]="sid" [ngModelOptions]="{standalone: true}"  class="form-control">
+      <br/>
+      <label style="color:  white">Compaint date</label>
+      <input type="text" [(ngModel)]="complaintdate" [ngModelOptions]="{standalone: true}" class="form-control"
+      placeholder="DD-MM-YYYY">
+      <br/>
+      <label style="color:  white">Describe the issue</label>
+      <textarea rows="3" cols="10" [(ngModel)]="desc" [ngModelOptions]="{standalone: true}"  class="form-control">
+      </textarea>
+      <br/>
+      <label style="color:  white">Resolved date</label>
+      <input type="text" [(ngModel)]="resolvedate" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="DD-MM-YYYY">
+      <br/>
+      <label style="color:  white">Status</label>
+      <input type="text" [(ngModel)]="status" [ngModelOptions]="{standalone: true}"  class="form-control" id="status" placeholder="Resolved/Not resolved">
+</form>
+    <br/>
+      <button class="ub" style="color:blue" type="submit" (click)="UpdateRecords()" >update</button>
+
+</div>

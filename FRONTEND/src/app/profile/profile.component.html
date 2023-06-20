@@ -1,0 +1,43 @@
+<app-menu></app-menu>
+<div class="bg"><br/>
+<h1 style="color:white">Pesonal details:</h1>
+
+<div class="list">
+      <ul *ngFor="let Item of StudentArray | filter:search"><br/>
+      <li style="color:white"><pre>CONSUMER ID : {{Item.eid }}</pre></li><br/>
+      <li style="color:white"><pre>NAME        : {{Item.name }}</pre></li><br/>
+      <li style="color:white"><pre>ADDRESS     : {{Item.address }}</pre></li><br/>
+      <li style="color:white"><pre>CONTACT     : {{Item.phone }}</pre></li><br/>
+      </ul>
+</div>
+<br/>
+<h1 style="color:white">My Electricity usage:</h1>
+  <table class="table">
+  <thead>
+  <tr>
+      <th style="color:coral" scope="col">Consumar ID</th>
+      <th style="color:coral" scope="col">READING ID</th>
+      <th style="color:coral" scope="col">READ DATE</th>
+      <th style="color:coral" scope="col">DUE DATE</th>
+      <th style="color:coral" scope="col">CONSUMED UNITS</th>
+      <th style="color:coral" scope="col">BILL</th>
+      <th style="color:coral" scope="col">STATUS</th>
+      <th style="color:coral" scope="col">PAYMENT</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let Item of ReadingArray | filter:search">
+      <td style="color:white">{{Item.eid }}</td>
+      <td style="color:white">{{Item.rid }}</td>
+      <td style="color:white">{{Item.readingdate }}</td>
+      <td style="color:white">{{Item.duedate }}</td>
+      <td style="color:white">{{Item.units }}</td>
+      <td style="color:white">{{Item.bill }}</td>
+      <td style="color:white">{{Item.status }}</td>
+      <td>
+        <button type="button" class="btn btn-primary" (click)="hitpay(Item)">Pay</button>
+      </td>
+    </tr>
+  </tbody>
+</table><br/>
+</div>

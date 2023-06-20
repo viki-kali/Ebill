@@ -1,0 +1,28 @@
+<app-menu></app-menu>
+<div class="bg"><br/>
+<br/>
+<h1 style="color:red">Request service</h1>
+<form>
+      <label style="color:  white">Consumer Id</label>
+      <input type="text" [(ngModel)]="eid" [ngModelOptions]="{standalone: true}"  class="form-control">
+      <br/>
+      <label style="color:  white">Service Id</label>
+      <input type="text" [(ngModel)]="sid" [ngModelOptions]="{standalone: true}"  class="form-control">
+      <br/>
+      <label style="color:  white">Compaint date</label>
+      <input type="text" [(ngModel)]="complaintdate" [ngModelOptions]="{standalone: true}" class="form-control"
+      placeholder="DD-MM-YYYY">
+      <br/>
+      <label style="color:  white">Describe the issue</label>
+      <textarea rows="3" cols="10" [(ngModel)]="desc" [ngModelOptions]="{standalone: true}"  class="form-control">
+      </textarea>
+      <br/>
+      <label style="color:  white">Resolved date</label>
+      <input type="text" [(ngModel)]="resolvedate" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="DD-MM-YYYY">
+      <br/>
+      <label style="color:  white">Status</label>
+      <input type="text" [(ngModel)]="status" [ngModelOptions]="{standalone: true}"  class="form-control" id="status" placeholder="Resolved/Not resolved">
+</form>
+    <br/>
+   <button type="submit" (click)="register()" class="btn btn-primary">Complaint</button>
+</div>

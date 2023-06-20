@@ -1,0 +1,57 @@
+<app-menuadmin></app-menuadmin>
+<div class="bg"><br/>
+<h1 style="color:red">CONSUMER TABLE</h1>
+   <br/><br/>
+   <div class="form-group">
+      <label style="color:white">Search data</label><br/><br/>
+      <input type="text" [(ngModel)]="search" [ngModelOptions]="{standalone: true}"  class="form-control" id="status" placeholder="Enter filter condition"><br/>
+  </div>
+  <table class="table">
+  <thead>
+  <tr>
+      <th style="color:coral" scope="col">Consumar ID</th>
+      <th style="color:coral" scope="col">PASSWORD</th>
+      <th style="color:coral" scope="col">NAME</th>
+      <th style="color:coral" scope="col">ADDRESS</th>
+      <th style="color:coral" scope="col">CONTACT</th>
+      <th style="color:coral" scope="col">EDIT</th>
+      <th style="color:coral" scope="col">DELETE</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let StudentItem of StudentArray | filter:search">
+      <td style="color:white">{{StudentItem.eid }}</td>
+      <td style="color:white">{{StudentItem.password }}</td>
+      <td style="color:white">{{StudentItem.name  | uppercase}}</td>
+      <td style="color:white">{{StudentItem.address }}</td>
+      <td style="color:white">{{StudentItem.phone }}</td>
+      <td>
+        <button type="button" class="btn btn-success" (click)="setUpdate(StudentItem)">Edit</button>/
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="setDelete(StudentItem)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table><br/>
+<h1 style="color:red">Updation form</h1><br/>
+<div class="upform">
+<form>
+      <label style="color:  white">Consumer Id</label>
+      <input type="text" [(ngModel)]="eid" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter consumer id">
+      <br/>
+      <label style="color:  white">Password</label>
+      <input type="text" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter new password">
+      <br/>
+      <label style="color:  white">Name</label>
+      <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter consumer name">
+      <br/>
+      <label style="color:  white">Address</label>
+      <input type="text" [(ngModel)]="address" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Enter permanent address">
+      <br/>
+      <label style="color:  white">Contact</label>
+      <input type="text" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter contact number">
+</form>
+    <br/>
+      <button class="ub" style="color:blue" type="submit" (click)="UpdateRecords()" >update</button>
+</div>
